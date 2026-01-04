@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "AutoRefresh",
+  "version": "1.0",
+  "description": "Automatically refreshes pages after a set interval.",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "alarms"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "@AutoRefresh.sheentee.net"
+    }
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
