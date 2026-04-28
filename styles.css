@@ -126,186 +126,75 @@ h2 {
     gap: 6px;
 }
 
-/* Options Page Specifics */
-body.options-page {
-    width: 100%;
-    width: 800px;
-    /* Reduced max-width for better dialog fit */
-    margin: 0 auto;
-    min-height: auto;
-    /* Remove 100vh constraint */
-    padding: 20px;
-    /* Reduced padding */
-}
-
-.section {
-    margin-bottom: 32px;
-}
-
-.form-group {
+/* AutoRefresh Specific Inputs */
+.input-group {
+    display: flex;
+    gap: 8px;
     margin-bottom: 16px;
 }
 
-.radio-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+input[type="number"] {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: var(--text-primary);
+    padding: 8px 12px;
+    font-family: var(--font-family);
+    font-size: 14px;
+    width: 100%;
 }
 
-.radio-label {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+input[type="number"]:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
     cursor: pointer;
-    padding: 8px;
-    border-radius: 6px;
+    font-weight: 600;
+    width: 100%;
     transition: background-color 0.2s;
 }
 
-.radio-label:hover {
-    background-color: rgba(255, 255, 255, 0.05);
+.btn-primary:hover {
+    background-color: var(--accent-hover);
 }
 
-/* Connectivity List */
-.source-list {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.source-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px;
-    background-color: rgba(255, 255, 255, 0.03);
-    border-radius: 8px;
-}
-
-.status-indicator {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 13px;
-}
-
-.dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-}
-
-.dot.online {
-    background-color: var(--success-color);
-    box-shadow: 0 0 8px var(--success-color);
-}
-
-.dot.offline {
+.btn-stop {
     background-color: var(--error-color);
-}
-
-.dot.pending {
-    background-color: var(--text-secondary);
-}
-
-/* Header */
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-/* Footer */
-.footer {
-    margin-top: 20px;
-    margin: 0;
-    background: linear-gradient(to right, #60a5fa, #a78bfa);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-h2 {
-    font-size: 18px;
-    font-weight: 600;
-    margin: 0 0 12px 0;
-    color: var(--text-primary);
-}
-
-.label {
-    font-size: 12px;
-    color: var(--text-secondary);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 4px;
-}
-
-.value {
-    font-size: 16px;
-    font-weight: 500;
-}
-
-/* Cards */
-.card {
-    background-color: var(--card-bg);
-    border-radius: var(--border-radius);
-    padding: 16px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-/* Time Display */
-.time-display {
-    text-align: center;
-}
-
-.time-large {
-    font-size: 36px;
-    font-weight: 700;
-    line-height: 1.2;
-    font-variant-numeric: tabular-nums;
-}
-
-.date-small {
-    font-size: 14px;
-    color: var(--text-secondary);
-    margin-top: 4px;
-}
-
-/* IP Display */
-.ip-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.ip-value {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 18px;
-    color: var(--accent-color);
-}
-
-/* Buttons */
-.btn-icon {
-    background: none;
+    color: white;
     border: none;
-    cursor: pointer;
-    color: var(--text-secondary);
-    padding: 8px;
+    padding: 10px 16px;
     border-radius: 8px;
-    transition: all 0.2s;
+    cursor: pointer;
+    font-weight: 600;
+    width: 100%;
+    transition: opacity 0.2s;
 }
 
-.btn-icon:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: var(--text-primary);
+.btn-stop:hover {
+    opacity: 0.9;
 }
 
-.btn-copy {
-    display: flex;
-    align-items: center;
-    gap: 6px;
+.hidden {
+    display: none;
+}
+
+.stats-container {
+    text-align: center;
+    margin-top: 16px;
+}
+
+.count-large {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--accent-color);
+    line-height: 1;
 }
 
 /* Options Page Specifics */
@@ -413,29 +302,4 @@ a {
 
 a:hover {
     text-decoration: underline;
-}
-
-/* Donation Button */
-.footer-donate {
-    margin-top: 8px;
-    display: flex;
-    justify-content: flex-start;
-}
-
-.btn-donate {
-    background-color: #0070ba;
-    color: #ffffff !important;
-    /* Force white text */
-    padding: 6px 12px;
-    border-radius: 16px;
-    font-size: 11px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background-color 0.2s;
-    display: inline-block;
-}
-
-.btn-donate:hover {
-    background-color: #005ea6;
-    text-decoration: none;
 }
